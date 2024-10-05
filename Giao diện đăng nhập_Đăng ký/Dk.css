@@ -55,6 +55,7 @@ body{
     position: absolute;
     transition: none;
     transform: translateX(400px);
+    background-color: #222048;
 }
 
 .wrapper.active .form-box.register{
