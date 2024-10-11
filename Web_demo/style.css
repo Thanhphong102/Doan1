@@ -140,9 +140,15 @@ ul#main-menu a:hover{
 }
 
 #banner{
-    min-height: 600px;
-    background-size: 100;
-    background-image: url('sticky-header/img/banner.webp');/*chèn ảnh background*/
+   
+     /* min-height: 600px;
+      */
+    /* background-size: 100; */
+    /* max-width: 100%; */ 
+    width: 250%;
+    height: 60vh;
+    background-image: url('sticky-header/img/banner.webp') ;/*chèn ảnh background*/
+   background-size: 75%;
 }
 
 /* #content h1{
