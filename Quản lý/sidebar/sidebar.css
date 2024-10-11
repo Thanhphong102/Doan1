@@ -26,22 +26,24 @@ body {
 
 /* Sidebar Styles */
 .sidebar {
-    width: 250px;
+    min-height: 100px;
+    width: 300px;
     background-color: var(--primary-color);
     color: var(--text-light);
-    padding: 20px 0;
+    padding: 50px 0;
+    padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
 .brand {
     font-size: 28px;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px;
     color: var(--text-light);
     font-weight: bold;
     letter-spacing: 2px;
     border-bottom: 1px solid var(--primary-light);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .nav-menu {
@@ -97,86 +99,4 @@ body {
 
 .add-new-btn:hover {
     background-color: var(--primary-light);
-}
-
-/* Table Styles */
-.data-table {
-    width: 100%;
-    background-color: var(--text-light);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    border-collapse: collapse;
-}
-
-.data-table th {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    padding: 15px;
-    text-align: left;
-    font-weight: 500;
-}
-
-.data-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-dark);
-}
-
-.data-table tr:hover {
-    background-color: var(--hover-color);
-}
-
-/* Button Styles */
-.btn {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    margin: 0 5px;
-    transition: opacity 0.3s;
-}
-
-.btn:hover {
-    opacity: 0.9;
-}
-
-.btn-view {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-}
-
-.btn-edit {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.btn-delete {
-    background-color: #dc3545;
-    color: white;
-}
-
-/* Search Bar */
-.search-bar {
-    margin-bottom: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.search-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.search-btn {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
