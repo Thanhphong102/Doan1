@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CeCi - Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        :root {
+            --primary-color: #222048;
+            --primary-light: #2f2d63;
+            --primary-dark: #1a1836;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --border-color: #e0e0e0;
+            --success-color: #4CAF50;
+            --warning-color: #ff9800;
+            --danger-color: #f44336;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 20px 0;
+        }
+
+        .brand {
+            font-size: 28px;
+            text-align: center;
+            padding: 20px 0;
+            color: var(--text-light);
+            font-weight: bold;
+            border-bottom: 1px solid var(--primary-light);
+        }
+
+        .nav-menu {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .nav-item {
+            padding: 15px 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: var(--primary-light);
+        }
+
+        .nav-item.active {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--text-light);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            background-color: #f8f9fa;
+        }
+
+        .page-title {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        /* Stats Cards */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--text-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .stat-title {
+            color: var(--text-dark);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stat-trend {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .trend-up {
+            color: var(--success-color);
+        }
+
+        .trend-down {
+            color: var(--danger-color);
+        }
+
+        /* Charts Container */
+        .charts-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .chart-card {
+            background: var(--text-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .chart-title {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Recent Orders */
+        .recent-orders {
+            background: var(--text-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .orders-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .orders-table th,
+        .orders-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .orders-table th {
+            color: var(--primary-color);
+        }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .status-pending {
+            background-color: var(--warning-color);
+            color: var(--text-light);
+        }
+
+        .status-completed {
+            background-color: var(--success-color);
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="brand">CeCi</div>
+            <ul class="nav-menu">
+                <li class="nav-item active">Dashboard</li>
+                <li class="nav-item">Sản phẩm</li>
+                <li class="nav-item">Đơn hàng</li>
+                <li class="nav-item">Khách hàng</li>
+                <li class="nav-item">Danh mục</li>
+                <li class="nav-item">Khuyến mãi</li>
+                <li class="nav-item">Đánh giá</li>
+                <li class="nav-item">Báo cáo</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1 class="page-title">Dashboard</h1>
+            
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-title">Doanh thu tháng</div>
+                    <div class="stat-value">45.6M</div>
+                    <div class="stat-trend trend-up">↑ 12.5%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Đơn hàng mới</div>
+                    <div class="stat-value">126</div>
+                    <div class="stat-trend trend-up">↑ 8.2%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Khách hàng mới</div>
+                    <div class="stat-value">85</div>
+                    <div class="stat-trend trend-up">↑ 5.7%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Tỷ lệ hoàn đơn</div>
+                    <div class="stat-value">2.4%</div>
+                    <div class="stat-trend trend-down">↓ 1.2%</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3 class="chart-title">Doanh thu theo tháng</h3>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3 class="chart-title">Top danh mục</h3>
+                    <canvas id="categoriesChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="recent-orders">
+                <h3 class="chart-title">Đơn hàng gần đây</h3>
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Mã đơn</th>
+                            <th>Khách hàng</th>
+                            <th>Sản phẩm</th>
+                            <th>Giá trị</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD001</td>
+                            <td>Nguyễn Thị An</td>
+                            <td>Son môi CeCi Magic Pink</td>
+                            <td>299.000đ</td>
+                            <td><span class="status status-completed">Hoàn thành</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD002</td>
+                            <td>Trần Văn Bình</td>
+                            <td>Phấn nước CeCi Glow</td>
+                            <td>450.000đ</td>
+                            <td><span class="status status-pending">Đang xử lý</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD003</td>
+                            <td>Lê Thị Cam</td>
+                            <td>Mascara CeCi Volume</td>
+                            <td>275.000đ</td>
+                            <td><span class="status status-completed">Hoàn thành</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Revenue Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['T1', 'T2', 'T3', 'T4', 'T5', 'T6'],
+                datasets: [{
+                    label: 'Doanh thu (triệu đồng)',
+                    data: [30.5, 35.2, 38.5, 42.3, 40.8, 45.6],
+                    borderColor: '#222048',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Categories Chart
+        const categoriesCtx = document.getElementById('categoriesChart').getContext('2d');
+        new Chart(categoriesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Son môi', 'Phấn nước', 'Mascara', 'Khác'],
+                datasets: [{
+                    data: [40, 25, 20, 15],
+                    backgroundColor: [
+                        '#222048',
+                        '#4CAF50',
+                        '#ff9800',
+                        '#f44336'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>
