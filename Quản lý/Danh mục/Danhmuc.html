@@ -6,28 +6,107 @@
     <title>CeCi - Quản lý Danh mục</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        :root {
-            --primary-color: #222048;
-            --text-color: #ffffff;
-            --accent-color: #2a2859;
-            --hover-color: #2f2d6a;
-        }
+:root {
+    --primary-color: #222048;
+    --primary-light: #2f2d63;
+    --primary-dark: #1a1836;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --border-color: #e0e0e0;
+    --hover-color: rgba(34, 32, 72, 0.1);
+}
 
-        body {
-            background-color: #f5f5f5;
-        }
+body {
+    background-color: #f5f5f5;
+}
 
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    min-height: 80px;
+    width: 280px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 50px 0;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.brand {
+    font-size: 28px;
+    text-align: center;
+    padding: 10px;
+    color: var(--text-light);
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--primary-light);
+    margin-bottom: 10px;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-item {
+    padding: 23px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px 0;
+}
+
+.nav-item:hover {
+    background-color: var(--primary-light);
+    padding-left: 30px;
+}
+
+.nav-item.active {
+    background-color: var(--primary-light);
+    border-left: 4px solid var(--text-light);
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #f8f9fa;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.add-new-btn {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-new-btn:hover {
+    background-color: var(--primary-light);
+}
 
         .header {
             display: flex;
@@ -129,15 +208,30 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Quản lý Danh mục</h1>
-            <button class="btn btn-primary">+ Thêm danh mục mới</button>
+        <div class="sidebar">
+            <div class="brand">CECI</div>
+            <ul class="nav-menu">
+                <li class="nav-item">Danh mục</li>
+                <li class="nav-item">Sản phẩm</li>
+                <li class="nav-item"> Chi tiết sản phẩm</li>
+                <li class="nav-item">Đơn hàng</li>
+                <li class="nav-item">Khách hàng</li>
+                <li class="nav-item">Khuyến mãi</li>
+                <li class="nav-item">Đánh giá</li>
+                <li class="nav-item">Chi tiết doanh thu</li>
+                <li class="nav-item active">Dashboard</li>
+            </ul>
         </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>Quản lý Danh mục</h1>
+                <button class="btn btn-primary">+ Thêm danh mục mới</button>
+            </div>
 
-        <div class="categories-grid" id="categoriesGrid">
-            <!-- Categories will be populated by JavaScript -->
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Categories will be populated by JavaScript -->
+            </div>
         </div>
-    </div>
 
     <script>
         const categories = [
