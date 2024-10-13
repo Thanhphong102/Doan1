@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CeCi - Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="brand">CeCi</div>
+            <ul class="nav-menu">
+                <li class="nav-item active">Dashboard</li>
+                <li class="nav-item">Sản phẩm</li>
+                <li class="nav-item">Đơn hàng</li>
+                <li class="nav-item">Khách hàng</li>
+                <li class="nav-item">Danh mục</li>
+                <li class="nav-item">Khuyến mãi</li>
+                <li class="nav-item">Đánh giá</li>
+                <li class="nav-item">Báo cáo</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1 class="page-title">Dashboard</h1>
+            
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-title">Doanh thu tháng</div>
+                    <div class="stat-value">45.6M</div>
+                    <div class="stat-trend trend-up">↑ 12.5%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Đơn hàng mới</div>
+                    <div class="stat-value">126</div>
+                    <div class="stat-trend trend-up">↑ 8.2%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Khách hàng mới</div>
+                    <div class="stat-value">85</div>
+                    <div class="stat-trend trend-up">↑ 5.7%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Tỷ lệ hoàn đơn</div>
+                    <div class="stat-value">2.4%</div>
+                    <div class="stat-trend trend-down">↓ 1.2%</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3 class="chart-title">Doanh thu theo tháng</h3>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3 class="chart-title">Top danh mục</h3>
+                    <canvas id="categoriesChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="recent-orders">
+                <h3 class="chart-title">Đơn hàng gần đây</h3>
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Mã đơn</th>
+                            <th>Khách hàng</th>
+                            <th>Sản phẩm</th>
+                            <th>Giá trị</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD001</td>
+                            <td>Nguyễn Thị An</td>
+                            <td>Son môi CeCi Magic Pink</td>
+                            <td>299.000đ</td>
+                            <td><span class="status status-completed">Hoàn thành</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD002</td>
+                            <td>Trần Văn Bình</td>
+                            <td>Phấn nước CeCi Glow</td>
+                            <td>450.000đ</td>
+                            <td><span class="status status-pending">Đang xử lý</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD003</td>
+                            <td>Lê Thị Cam</td>
+                            <td>Mascara CeCi Volume</td>
+                            <td>275.000đ</td>
+                            <td><span class="status status-completed">Hoàn thành</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Revenue Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['T1', 'T2', 'T3', 'T4', 'T5', 'T6'],
+                datasets: [{
+                    label: 'Doanh thu (triệu đồng)',
+                    data: [30.5, 35.2, 38.5, 42.3, 40.8, 45.6],
+                    borderColor: '#222048',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Categories Chart
+        const categoriesCtx = document.getElementById('categoriesChart').getContext('2d');
+        new Chart(categoriesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Son môi', 'Phấn nước', 'Mascara', 'Khác'],
+                datasets: [{
+                    data: [40, 25, 20, 15],
+                    backgroundColor: [
+                        '#222048',
+                        '#4CAF50',
+                        '#ff9800',
+                        '#f44336'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CeCi - Quản lý đơn hàng</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="brand">CeCi</div>
+            <ul class="nav-menu">
+                <li class="nav-item">Dashboard</li>
+                <li class="nav-item">Sản phẩm</li>
+                <li class="nav-item active">Đơn hàng</li>
+                <li class="nav-item">Khách hàng</li>
+                <li class="nav-item">Danh mục</li>
+                <li class="nav-item">Khuyến mãi</li>
+                <li class="nav-item">Đánh giá</li>
+                <li class="nav-item">Báo cáo</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="page-header">
+                <h1 class="page-title">Quản lý đơn hàng</h1>
+            </div>
+
+            <!-- Order Stats -->
+            <div class="order-stats">
+                <div class="stat-card">
+                    <div class="stat-title">Tổng đơn hàng</div>
+                    <div class="stat-value">245</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Chờ xử lý</div>
+                    <div class="stat-value">18</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Đang giao</div>
+                    <div class="stat-value">35</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Hoàn thành</div>
+                    <div class="stat-value">192</div>
+                </div>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="search-filter">
+                <input type="text" class="search-input" placeholder="Tìm kiếm đơn hàng...">
+                <select class="filter-select">
+                    <option value="">Trạng thái</option>
+                    <option value="pending">Chờ xử lý</option>
+                    <option value="processing">Đang xử lý</option>
+                    <option value="completed">Hoàn thành</option>
+                    <option value="cancelled">Đã hủy</option>
+                </select>
+                <select class="filter-select">
+                    <option value="">Thời gian</option>
+                    <option value="today">Hôm nay</option>
+                    <option value="week">Tuần này</option>
+                    <option value="month">Tháng này</option>
+                </select>
+                <button class="search-btn">Tìm kiếm</button>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="orders-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Mã đơn</th>
+                            <th>Khách hàng</th>
+                            <th>Ngày đặt</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                            <th>Thanh toán</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD001</td>
+                            <td>Nguyễn Thị An</td>
+                            <td>10/10/2024</td>
+                            <td>599.000đ</td>
+                            <td><span class="status-badge status-pending">Chờ xử lý</span></td>
+                            <td>COD</td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="openOrderModal()">Chi tiết</button>
+                                <button class="action-btn update-btn">Cập nhật</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD002</td>
+                            <td>Trần Văn Bình</td>
+                            <td>10/10/2024</td>
+                            <td>450.000đ</td>
+                            <td><span class="status-badge status-processing">Đang giao</span></td>
+                            <td>Chuyển khoản</td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="openOrderModal()">Chi tiết</button>
+                                <button class="action-btn update-btn">Cập nhật</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD003</td>
+                            <td>Lê Thị Cam</td>
+                            <td>09/10/2024</td>
+                            <td>275.000đ</td>
+                            <td><span class="status-badge status-completed">Hoàn thành</span></td>
+                            <td>COD</td>
+                            <td>
+                                <button class="action-btn view-btn" onclick="openOrderModal()">Chi tiết</button>
+                                <button class="action-btn update-btn">Cập nhật</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Detail Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Chi tiết đơn hàng #ORD001</h2>
+                <button class="close-btn" onclick="closeOrderModal()">Đóng</button>
+            </div>
+            <div class="order-details">
+                <div class="detail-section">
+                    <div class="detail-group">
+                        <div class="detail-label">Khách hàng:</div>
+                        <div class="detail-value">Nguyễn Thị An</div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-label">Số điện thoại:</div>
+                        <div class="detail-value">0987654321</div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-label">Email:</div>
+                        <div class="detail-value">nguyenthian@email.com</div>
+                    </div>
+                </div>
+                <div class="detail-section">
+                    <div class="detail-group">
+                        <div class="detail-label">Địa chỉ giao hàng:</div>
+                        <div class="detail-value">123 Đường ABC, Quận 1, TP.HCM</div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-label">Ph

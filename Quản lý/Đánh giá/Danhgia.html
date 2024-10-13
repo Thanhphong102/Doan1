@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CeCi - Quản lý Đánh giá</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Quản lý Đánh giá</h1>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-title">Tổng đánh giá</div>
+                <div class="stat-value">524</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Đánh giá mới</div>
+                <div class="stat-value">12</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Đánh giá trung bình</div>
+                <div class="stat-value">4.5 ⭐</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Tỷ lệ phản hồi</div>
+                <div class="stat-value">95%</div>
+            </div>
+        </div>
+
+        <div class="reviews-container">
+            <div class="review-filters">
+                <button class="filter-btn active">Tất cả</button>
+                <button class="filter-btn">5 sao</button>
+                <button class="filter-btn">4 sao</button>
+                <button class="filter-btn">3 sao</button>
+                <button class="filter-btn">2 sao</button>
+                <button class="filter-btn">1 sao</button>
+                <button class="filter-btn">Chưa phản hồi</button>
+            </div>
+
+            <div class="reviews-list" id="reviewsList">
+                <!-- Reviews will be populated by JavaScript -->
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn">1</button>
+                <button class="page-btn active">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">...</button>
+                <button class="page-btn">10</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const reviews = [
+            {
+                id: 1,
+                customerName: 'Nguyễn Thị Anh',
+                rating: 5,
+                date: '2024-05-10',
+                content: 'Sản phẩm rất tốt, đóng gói cẩn thận, giao hàng nhanh. Sẽ ủng hộ shop dài dài.',
+                productName: 'Son môi CeCi Magic Pink',
+                images: ['/api/placeholder/100/100', '/api/placeholder/100/100'],
+                replied: true
+            },
+            {
+                id: 2,
+                customerName: 'Trần Văn Bình',
+                rating: 4,
+                date: '2024-05-09',
+                content: 'Sản phẩm tốt, nhưng giao hàng hơi chậm.',
+                productName: 'Phấn nước CeCi Glow',
+                images: [],
+                replied: false
+            },
+            {
+                id: 3,
+                customerName: 'Lê Thị Cẩm',
+                rating: 3,
+                date: '2024-05-08',
+                content: 'Sản phẩm tạm ổn, màu hơi khác so với hình.',
+                productName: 'Mascara CeCi Volume',
+                images: ['/api/placeholder/100/100'],
+                replied: false
+            }
+        ];
+
+        function renderStars(rating) {
+            return '⭐'.repeat(rating);
+        }
+
+        function renderReviews() {
+            const container = document.getElementById('reviewsList');
+            container.innerHTML = '';
+
+            reviews.forEach(review => {
+                const reviewElement = document.createElement('div');
+                reviewElement.className = 'review-item';
+                reviewElement.innerHTML = `
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">${review.customerName.charAt(0)}</div>
+                            <div>
+                                <div>${review.customerName}</div>
+                                <div class="review-date">${review.date}</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">${renderStars(review.rating)}</div>
+                    </div>
+                    <div>
+                        <strong>${review.productName}</strong>
+                    </div>
+                    <div class="review-content">${review.content}</div>
+                    ${review.images.length > 0 ? `
+                        <div class="review-images">
+                            ${review.images.map(img => `
+                                <img src="${img}" alt="Review image" class="review-image">
+                            `).join('')}
+                        </div>
+                    ` : ''}
+                    <div class="review-actions">
+                        ${!review.replied ? `
+                            <button class="btn btn-reply">Phản hồi</button>
+                        ` : ''}
+                        <button class="btn btn-delete">Xóa</button>
+                    </div>
+                `;
+                container.appendChild(reviewElement);
+            });
+        }
+
+        // Initialize the page
+        renderReviews();
+
+        // Add filter functionality
+        document.querySelector('.review-filters').addEventListener('click', (e) => {
+            if (e.target.classList.contains('filter-btn')) {
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

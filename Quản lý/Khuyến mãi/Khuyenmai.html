@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CeCi - Quản lý Khuyến mãi</title>
+    <link rel="stylesheet" href="Khuyenmai.css">
+    <link rel="stylesheet" href="sidebar.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="brand">CeCi</div>
+            <ul class="nav-menu">
+                <li class="nav-item">Danh mục</li>
+                <li class="nav-item">Sản phẩm</li>
+                <li class="nav-item">Chi tiết sản phẩm</li>
+                <li class="nav-item">Đơn hàng</li>
+                <li class="nav-item">Khách hàng</li>
+                <li class="nav-item">Khuyến mãi</li>
+                <li class="nav-item">Đánh giá</li>
+                <li class="nav-item">Chi tiết doanh thu</li>
+                <li class="nav-item active">Dashboard</li>
+            </ul>
+        </div>
+
+        <div class="header">
+            <h1>Quản lý Khuyến mãi</h1>
+            <button class="btn btn-primary">+ Thêm khuyến mãi mới</button>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active">Tất cả</div>
+            <div class="tab">Đang diễn ra</div>
+            <div class="tab">Sắp diễn ra</div>
+            <div class="tab">Đã kết thúc</div>
+        </div>
+
+        <div class="promotion-cards" id="promotionCards">
+            <!-- Promotions will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const promotions = [
+            {
+                id: 1,
+                name: 'Giảm giá mùa hè',
+                discount: '30%',
+                startDate: '2024-06-01',
+                endDate: '2024-06-30',
+                status: 'upcoming',
+                applicableProducts: 25,
+                minimumOrder: '500.000đ'
+            },
+            {
+                id: 2,
+                name: 'Flash Sale cuối tuần',
+                discount: '50%',
+                startDate: '2024-05-15',
+                endDate: '2024-05-16',
+                status: 'active',
+                applicableProducts: 10,
+                minimumOrder: '300.000đ'
+            },
+            {
+                id: 3,
+                name: 'Khuyến mãi tháng 4',
+                discount: '25%',
+                startDate: '2024-04-01',
+                endDate: '2024-04-30',
+                status: 'expired',
+                applicableProducts: 15,
+                minimumOrder: '200.000đ'
+            }
+        ];
+
+        function getStatusText(status) {
+            switch(status) {
+                case 'active': return 'Đang diễn ra';
+                case 'upcoming': return 'Sắp diễn ra';
+                case 'expired': return 'Đã kết thúc';
+                default: return '';
+            }
+        }
+
+        function renderPromotions() {
+            const container = document.getElementById('promotionCards');
+            container.innerHTML = '';
+
+            promotions.forEach(promo => {
+                const card = document.createElement('div');
+                card.className = 'promotion-card';
+                card.innerHTML = `
+                    <div class="promotion-header">
+                        <h3>${promo.name}</h3>
+                        <span class="promotion-status status-${promo.status}">
+                            ${getStatusText(promo.status)}
+                        </span>
+                    </div>
+                    <div class="promotion-body">
+                        <div class="promotion-info">
+                            <div class="info-row">
+                                <span class="info-label">Mức giảm giá:</span>
+                                <span>${promo.discount}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Thời gian:</span>
+                                <span>${promo.startDate} - ${promo.endDate}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Số sản phẩm áp dụng:</span>
+                                <span>${promo.applicableProducts}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Đơn hàng tối thiểu:</span>
+                                <span>${promo.minimumOrder}</span>
+                            </div>
+                        </div>
+                        <div class="promotion-actions">
+                            <button class="btn btn-edit">Chỉnh sửa</button>
+                            <button class="btn btn-delete">Xóa</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Initialize the page
+        renderPromotions();
+
+        // Tab switching functionality
+        document.querySelector('.tabs').addEventListener('click', (e) => {
+            if (e.target.classList.contains('tab')) {
+                document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+                e.target.classList.ad

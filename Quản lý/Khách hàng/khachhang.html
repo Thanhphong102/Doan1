@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CeCi - Quản lý Khách hàng</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Quản lý Khách hàng</h1>
+            <button class="btn btn-primary">+ Thêm khách hàng mới</button>
+        </div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Tìm kiếm khách hàng..." id="searchInput">
+            <button class="btn btn-primary">Tìm kiếm</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã KH</th>
+                    <th>Họ và tên</th>
+                    <th>Số điện thoại</th>
+                    <th>Email</th>
+                    <th>Tổng chi tiêu</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="customerTableBody">
+                <!-- Data will be populated by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Sample data
+        const customers = [
+            {
+                id: 'KH001',
+                name: 'Nguyễn Thị Anh',
+                phone: '0901234567',
+                email: 'anh.nguyen@email.com',
+                spending: '2.500.000đ',
+                status: 'active'
+            },
+            {
+                id: 'KH002',
+                name: 'Trần Văn Bình',
+                phone: '0912345678',
+                email: 'binh.tran@email.com',
+                spending: '1.800.000đ',
+                status: 'active'
+            },
+            {
+                id: 'KH003',
+                name: 'Lê Thị Cẩm',
+                phone: '0923456789',
+                email: 'cam.le@email.com',
+                spending: '3.200.000đ',
+                status: 'inactive'
+            }
+        ];
+
+        // Populate table
+        function populateTable(data) {
+            const tableBody = document.getElementById('customerTableBody');
+            tableBody.innerHTML = '';
+
+            data.forEach(customer => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${customer.id}</td>
+                    <td>${customer.name}</td>
+                    <td>${customer.phone}</td>
+                    <td>${customer.email}</td>
+                    <td>${customer.spending}</td>
+                    <td>
+                        <span class="status-${customer.status}">
+                            ${customer.status === 'active' ? 'Hoạt động' : 'Không hoạt động'}
+                        </span>
+                    </td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="btn btn-view">Xem</button>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete">Xóa</button>
+                        </div>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredCustomers = customers.filter(customer => 
+                customer.name.toLowerCase().includes(searchTerm) ||
+                customer.phone.includes(searchTerm) ||
+                customer.email.toLowerCase().includes(searchTerm)
+            );
+            populateTable(filteredCustomers);
+        });
+
+        // Initial table population
+        populateTable(customers);
+    </script>
+</body>
+</html>

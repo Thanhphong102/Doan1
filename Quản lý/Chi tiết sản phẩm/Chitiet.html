@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CeCi - Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="Chitiet.css">
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="#">Trang chủ</a> / 
+            <a href="#">Sản phẩm</a> / 
+            <a href="#">Son môi</a> / 
+            Son môi CeCi Magic Pink
+        </div>
+
+        <div class="product-container">
+            <div class="product-gallery">
+                <img src="/api/placeholder/500/400" alt="Main product image" class="main-image" id="mainImage">
+                <div class="thumbnail-container">
+                    <img src="/api/placeholder/100/80" alt="Thumbnail 1" class="thumbnail">
+                    <img src="/api/placeholder/100/80" alt="Thumbnail 2" class="thumbnail">
+                    <img src="/api/placeholder/100/80" alt="Thumbnail 3" class="thumbnail">
+                    <img src="/api/placeholder/100/80" alt="Thumbnail 4" class="thumbnail">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>Son môi CeCi Magic Pink</h1>
+                
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Mã sản phẩm:</span>
+                        <strong>SP001</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Danh mục:</span>
+                        <strong>Son môi</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Thương hiệu:</span>
+                        <strong>CeCi</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Xuất xứ:</span>
+                        <strong>Hàn Quốc</strong>
+                    </div>
+                </div>
+
+                <div class="price-info">
+                    <div class="meta-label">Giá bán:</div>
+                    <div class="price">299.000đ</div>
+                    <div style="margin-top: 10px;">
+                        <span class="stock-status in-stock">Còn hàng</span>
+                        <span style="margin-left: 10px;">50 sản phẩm</span>
+                    </div>
+                </div>
+
+                <div class="tabs">
+                    <div class="tab active" data-tab="description">Mô tả sản phẩm</div>
+                    <div class="tab" data-tab="specifications">Thông số kỹ thuật</div>
+                    <div class="tab" data-tab="reviews">Đánh giá (15)</div>
+                </div>
+
+                <div class="tab-content">
+                    <div id="description" class="product-description">
+                        <p>Son môi CeCi Magic Pink là dòng son cao cấp với công thức độc quyền giúp môi luôn mềm mịn và căng mọng. Với thành phần dưỡng ẩm cao cấp, son giúp dưỡng môi hiệu quả và mang lại màu sắc tươi tắn, rạng rỡ cho đôi môi.</p>
+                        <p style="margin-top: 10px;">Đặc điểm nổi bật:</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Màu sắc tự nhiên, lâu trôi</li>
+                            <li>Công thức dưỡng ẩm độc quyền</li>
+                            <li>Không gây khô môi</li>
+                            <li>Thành phần an toàn, lành tính</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary">Chỉnh sửa sản phẩm</button>
+                    <button class="btn btn-outline">Xem trước</button>
+                    <button class="btn btn-danger">Xóa sản phẩm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        document.querySelector('.tabs').addEventListener('click', (e) => {
+            if (e.target.classList.contains('tab')) {
+                // Remove active class from all tabs
+                document.querySelectorAll('.tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Add active class to clicked tab
+                e.target.classList.add('active');
+                
+                // Show corresponding content
+                const tabContent = document.getElementById(e.target.dataset.tab);
+                if (tabContent) {
+                    document.querySelectorAll('.tab-content > div').forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    tabContent.style.display = 'block';
+                }
+            }
+        });
+
+        // Thumbnail click functionality
+        document.querySelector('.thumbnail-container').addEventListener('click', (e) => {
+            if (e.target.classList.contains('thumbnail')) {
+                document.querySelectorAll('.thumbnail').forEach(thumb => {
+                    thumb.style.borderColor = 'transparent';
+                });
+                e.target.style.borderColor = '#222048';
+                document.getElementById('mainImage').src = e.target.src;
+            }
+        });
+    </script>
+</body>
+</html>
