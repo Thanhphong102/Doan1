@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 :root {
@@ -37,23 +37,27 @@
 .brand {
     font-size: 28px;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px;
+    color: var(--text-light);
+    font-weight: bold;
+    letter-spacing: 2px;
     border-bottom: 1px solid var(--primary-light);
+    margin-bottom: 10px;
 }
-
 .nav-menu {
     list-style: none;
-    margin-top: 20px;
 }
 
 .nav-item {
-    padding: 15px 25px;
+    padding: 27px 25px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    margin: 5px 0;
 }
 
 .nav-item:hover {
     background-color: var(--primary-light);
+    padding-left: 30px;
 }
 
 .nav-item.active {
