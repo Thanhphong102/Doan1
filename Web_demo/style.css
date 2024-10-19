@@ -102,7 +102,6 @@ header.sticky #main-menu a{
     align-items: center;
 }
 
-
 #logo{
     color:white;
     text-transform:uppercase ;
@@ -127,33 +126,37 @@ ul#main-menu a:hover{
 }
 
 #banner{
-<<<<<<< HEAD
-   
-     min-height: 600px;
-    
-    /* background-size: 100; */
-    /* max-width: 100%; */ 
-    width: 300%;
-    height: 60vh;
-    background-image: url('sticky-header/img/banner.webp') ;/*chèn ảnh background*/
-   background-size: 100%;
-=======
     min-height: 600px;
     background-size: 1600px;
     background-image: url('sticky-header/img/banner.webp');/*chèn ảnh background*/
->>>>>>> 66214943fd87d0d436681adcec24c440e7b5c8f6
 }
 
+/* #content h1{
+    padding: 30px 0px;
+    
+} */
 #content{
     margin-block: 1.2rem;
     padding: 30px 0px;
 }
 
+/*hover chuột vào menu xuất hiện màu khác*/
+/*#main-menu>li>a::before{
+    content: "";
+    height: 1px;/*độ dày đường viền
+    width: 0px;
+    background: rgb(187, 29, 29);
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    transition: all 0.5s ease-in-out;
+}*/
 #main-menu>li:hover>a::before{
+    /*display:block;nếu cho width trên bằng 0 có thể bỏ đi đoạn lệnh này*/
     width:20%;
     text-transform: translatex(10%) ;
 }
-
+/****/
 .products{
     list-style: none;
     display:flex;
@@ -174,21 +177,26 @@ ul#main-menu a:hover{
     margin-block: 20px;
 }
 
+
 .product-top{
     /* position:relative; *//*cần bug*/
     overflow:hidden;   
 }
-.product-thumb{
+
+  .product-thumb{
     display:flex;
     justify-content: center;
 } 
 
+/* .product-thumb img{
+    display:block;
+}  */
 .product-thumb img:hover{
     filter: opacity(80%);
 }
 
 .buy-now{
-    display:none;
+    display:none;/*xóa bỏ*/
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;
@@ -206,19 +214,14 @@ ul#main-menu a:hover{
 .product-item:hover .buy-now{
     display:none;/*đổi thành block*/
     bottom:0px;
-    opacity:0.85;
+    opacity:0.85;/*tạo đọ trong suốt cho buton*/
 }
 .product-info {
     padding:20px 0px;
 }
 .product-info a{
-     display: block; 
-     text-decoration: none;
-}
-
-
-#wrapper .heading_t{
-    margin-left: 30px;
+     display: block; /*cho các thẻ a xuống hàng*/
+     text-decoration: none;/*ẩn đi đường gạch chân dưới chữ*/
 }
 .product-cat{
     font-size: 11px;
@@ -235,7 +238,7 @@ ul#main-menu a:hover{
     text-overflow: ellipsis; /* Hiển thị dấu ba chấm (...) khi văn bản bị cắt */
     color: #334862;
     padding: 3px;
-    white-space: normal; 
+    white-space: normal; /* Đảm bảo văn bản xuống dòng đúng cách */
 }
 
  .product-price{
