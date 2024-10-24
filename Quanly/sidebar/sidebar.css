@@ -52,7 +52,10 @@ body {
 }
 
 a {
-
+    display: inline-block;
+    /* padding: 20px; */
+    text-decoration: none;
+    color: white;
 }
 
 .nav-item {
