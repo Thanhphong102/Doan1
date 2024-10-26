@@ -102,11 +102,14 @@ body {
     background-color: var(--primary-light);
 }
 
+.important{
+    padding: 50px;
+}
 
 /* Main Content Styles */
 .main-content {
     flex: 1;
-    padding: 30px;
+    padding: 3px;
     background-color: #f8f9fa;
 }
 
