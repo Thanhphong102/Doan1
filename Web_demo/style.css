@@ -127,7 +127,6 @@ ul#main-menu a:hover{
 }
 
 #banner{
-<<<<<<< HEAD
    
      min-height: 600px;
     
@@ -137,11 +136,8 @@ ul#main-menu a:hover{
     height: 60vh;
     background-image: url('sticky-header/img/banner.webp') ;/*chèn ảnh background*/
    background-size: 100%;
-=======
-    min-height: 600px;
-    background-size: 1600px;
-    background-image: url('sticky-header/img/banner.webp');/*chèn ảnh background*/
->>>>>>> 66214943fd87d0d436681adcec24c440e7b5c8f6
+   
+
 }
 
 #content{
