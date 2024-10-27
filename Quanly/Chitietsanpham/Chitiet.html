@@ -4,82 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CECI |Chi tiết sản phẩm</title>
-    <link rel="stylesheet" href="Chitiet.css">
+    <link rel="stylesheet" href="/Quanly/Chitietsanpham/Chitiet.css">
 </head>
 <body>
     <div class="container">
-        <div class="breadcrumb">
-            <a href="#">Trang chủ</a> / 
-            <a href="#">Sản phẩm</a> / 
-            <a href="#">Son môi</a> / 
-            Son môi CeCi Magic Pink
+        <div class="sidebar">
+            <div class="brand">CECI</div>
+            <ul class="nav-menu">
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Danhmuc/Danhmuc.html">Danh mục</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Sanpham/Sanpham.html">Sản phẩm</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Chitietsanpham/Chitiet.html">Chi tiết sản phẩm</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Donhang/Donhang.html">Đơn hàng</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Khachhang/khachhang.html">Khách hàng</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Khuyenmai/Khuyenmai.html">Khuyến mãi</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Danhgia/Danhgia.html">Đánh giá</a>
+                    </div>
+                </li> 
+            </ul>
         </div>
 
-        <div class="product-container">
-            <div class="product-gallery">
-                <img src="/api/placeholder/500/400" alt="Main product image" class="main-image" id="mainImage">
-                <div class="thumbnail-container">
-                    <img src="/api/placeholder/100/80" alt="Thumbnail 1" class="thumbnail">
-                    <img src="/api/placeholder/100/80" alt="Thumbnail 2" class="thumbnail">
-                    <img src="/api/placeholder/100/80" alt="Thumbnail 3" class="thumbnail">
-                    <img src="/api/placeholder/100/80" alt="Thumbnail 4" class="thumbnail">
-                </div>
+        <div class="main-container">
+            <div class="breadcrumb">
+                <a href="#">Trang chủ</a> / 
+                <a href="#">Sản phẩm</a> / 
+                <a href="#">Son môi</a> / 
+                Son môi CeCi Magic Pink
             </div>
 
-            <div class="product-info">
-                <h1>Son môi CeCi Magic Pink</h1>
-                
-                <div class="product-meta">
-                    <div class="meta-item">
-                        <span class="meta-label">Mã sản phẩm:</span>
-                        <strong>SP001</strong>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Danh mục:</span>
-                        <strong>Son môi</strong>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Thương hiệu:</span>
-                        <strong>CeCi</strong>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">Xuất xứ:</span>
-                        <strong>Hàn Quốc</strong>
+            <div class="product-container">
+                <div class="product-gallery">
+                    <img src="/api/placeholder/500/400" alt="Main product image" class="main-image" id="mainImage">
+                    <div class="thumbnail-container">
+                        <img src="/api/placeholder/100/80" alt="Thumbnail 1" class="thumbnail">
+                        <img src="/api/placeholder/100/80" alt="Thumbnail 2" class="thumbnail">
+                        <img src="/api/placeholder/100/80" alt="Thumbnail 3" class="thumbnail">
+                        <img src="/api/placeholder/100/80" alt="Thumbnail 4" class="thumbnail">
                     </div>
                 </div>
 
-                <div class="price-info">
-                    <div class="meta-label">Giá bán:</div>
-                    <div class="price">299.000đ</div>
-                    <div style="margin-top: 10px;">
-                        <span class="stock-status in-stock">Còn hàng</span>
-                        <span style="margin-left: 10px;">50 sản phẩm</span>
+                <div class="product-info">
+                    <h1>Son môi CeCi Magic Pink</h1>
+                    
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Mã sản phẩm:</span>
+                            <strong>SP001</strong>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Danh mục:</span>
+                            <strong>Son môi</strong>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Thương hiệu:</span>
+                            <strong>CeCi</strong>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Xuất xứ:</span>
+                            <strong>Hàn Quốc</strong>
+                        </div>
                     </div>
-                </div>
 
-                <div class="tabs">
-                    <div class="tab active" data-tab="description">Mô tả sản phẩm</div>
-                    <div class="tab" data-tab="specifications">Thông số kỹ thuật</div>
-                    <div class="tab" data-tab="reviews">Đánh giá (15)</div>
-                </div>
-
-                <div class="tab-content">
-                    <div id="description" class="product-description">
-                        <p>Son môi CeCi Magic Pink là dòng son cao cấp với công thức độc quyền giúp môi luôn mềm mịn và căng mọng. Với thành phần dưỡng ẩm cao cấp, son giúp dưỡng môi hiệu quả và mang lại màu sắc tươi tắn, rạng rỡ cho đôi môi.</p>
-                        <p style="margin-top: 10px;">Đặc điểm nổi bật:</p>
-                        <ul style="margin-left: 20px; margin-top: 10px;">
-                            <li>Màu sắc tự nhiên, lâu trôi</li>
-                            <li>Công thức dưỡng ẩm độc quyền</li>
-                            <li>Không gây khô môi</li>
-                            <li>Thành phần an toàn, lành tính</li>
-                        </ul>
+                    <div class="price-info">
+                        <div class="meta-label">Giá bán:</div>
+                        <div class="price">299.000đ</div>
+                        <div style="margin-top: 10px;">
+                            <span class="stock-status in-stock">Còn hàng</span>
+                            <span style="margin-left: 10px;">50 sản phẩm</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="action-buttons">
-                    <button class="btn btn-primary">Chỉnh sửa sản phẩm</button>
-                    <button class="btn btn-outline">Xem trước</button>
-                    <button class="btn btn-danger">Xóa sản phẩm</button>
+                    <div class="tabs">
+                        <div class="tab active" data-tab="description">Mô tả sản phẩm</div>
+                        <div class="tab" data-tab="specifications">Thông số kỹ thuật</div>
+                        <div class="tab" data-tab="reviews">Đánh giá (15)</div>
+                    </div>
+
+                    <div class="tab-content">
+                        <div id="description" class="product-description">
+                            <p>Son môi CeCi Magic Pink là dòng son cao cấp với công thức độc quyền giúp môi luôn mềm mịn và căng mọng. Với thành phần dưỡng ẩm cao cấp, son giúp dưỡng môi hiệu quả và mang lại màu sắc tươi tắn, rạng rỡ cho đôi môi.</p>
+                            <p style="margin-top: 10px;">Đặc điểm nổi bật:</p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Màu sắc tự nhiên, lâu trôi</li>
+                                <li>Công thức dưỡng ẩm độc quyền</li>
+                                <li>Không gây khô môi</li>
+                                <li>Thành phần an toàn, lành tính</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary">Chỉnh sửa sản phẩm</button>
+                        <button class="btn btn-outline">Xem trước</button>
+                        <button class="btn btn-danger">Xóa sản phẩm</button>
+                    </div>
                 </div>
             </div>
         </div>

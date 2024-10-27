@@ -4,34 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CECI |Quản lý Danh mục</title>
-    <link rel ="stylesheet" href="Danhmuc.css">
+    <link rel ="stylesheet" href="/Quanly/Danhmuc/Danhmuc.css">
 </head>
 <body>
     <div class="container">
         <div class="sidebar">
             <div class="brand">CECI</div>
             <ul class="nav-menu">
-                <li class="nav-item">Danh mục</li>
-                <li class="nav-item">Sản phẩm</li>
-                <li class="nav-item"> Chi tiết sản phẩm</li>
-                <li class="nav-item">Đơn hàng</li>
-                <li class="nav-item">Khách hàng</li>
-                <li class="nav-item">Khuyến mãi</li>
-                <li class="nav-item">Đánh giá</li>
-                <li class="nav-item">Chi tiết doanh thu</li>
-                <li class="nav-item active">Dashboard</li>
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Danhmuc/Danhmuc.html">Danh mục</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Sanpham/Sanpham.html">Sản phẩm</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Chitietsanpham/Chitiet.html">Chi tiết sản phẩm</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Donhang/Donhang.html">Đơn hàng</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Khachhang/khachhang.html">Khách hàng</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Khuyenmai/Khuyenmai.html">Khuyến mãi</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Danhgia/Danhgia.html">Đánh giá</a>
+                    </div>
+                </li> 
             </ul>
         </div>
+
         <div class="main-content">
             <div class="header">
                 <h1>Quản lý Danh mục</h1>
                 <button class="btn btn-primary">+ Thêm danh mục mới</button>
             </div>
 
-            <div class="categories-grid" id="categoriesGrid">
-                <!-- Categories will be populated by JavaScript -->
-            </div>
+            <div class="categories-grid" id="categoriesGrid"> </div>
         </div>
+    </div>
 
     <script>
         const categories = [
