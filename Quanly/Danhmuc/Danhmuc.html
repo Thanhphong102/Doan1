@@ -49,10 +49,15 @@
             </ul>
         </div>
 
-        <div class="main-content">
+        <div class="main-container">
             <div class="header">
                 <h1>Quản lý Danh mục</h1>
-                <button class="btn btn-primary">+ Thêm danh mục mới</button>
+                <button class="add-new-btn">+ Thêm danh mục mới</button>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Tìm kiếm danh mục...">
+                <button class="search-btn">Tìm kiếm</button>
             </div>
 
             <div class="categories-grid" id="categoriesGrid"> </div>
@@ -66,14 +71,14 @@
                 name: 'Son môi',
                 productCount: 15,
                 activeProducts: 12,
-                description: 'Các sản phẩm son môi cao cấp'
+                description: 'Các sản phẩm son môi cao cấp',
             },
             {
                 id: 2,
                 name: 'Trang điểm mắt',
                 productCount: 25,
                 activeProducts: 20,
-                description: 'Phấn mắt, mascara, kẻ mắt'
+                description: 'Phấn mắt, mascara, kẻ mắt',
             },
             {
                 id: 3,
@@ -98,7 +103,10 @@
             categories.forEach(category => {
                 const card = document.createElement('div');
                 card.className = 'category-card';
-                card.innerHTML = `
+                card.innerHTML = `    
+                    <div >
+                        <img class="anh" src="data:image/jpeg;base64,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" alt="">
+                    </div>
                     <div class="category-header">
                         <h3 class="category-title">${category.name}</h3>
                         <div class="category-actions">

@@ -8,50 +8,93 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Quản lý Đánh giá</h1>
+        <div class="sidebar">
+            <div class="brand">CECI</div>
+            <ul class="nav-menu">
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Danhmuc/Danhmuc.html">Danh mục</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Sanpham/Sanpham.html">Sản phẩm</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Chitietsanpham/Chitiet.html">Chi tiết sản phẩm</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Donhang/Donhang.html">Đơn hàng</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Khachhang/khachhang.html">Khách hàng</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Khuyenmai/Khuyenmai.html">Khuyến mãi</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Danhgia/Danhgia.html">Đánh giá</a>
+                    </div>
+                </li> 
+            </ul>
         </div>
 
-        <div class="stats-container">
-            <div class="stat-card">
-                <div class="stat-title">Tổng đánh giá</div>
-                <div class="stat-value">524</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-title">Đánh giá mới</div>
-                <div class="stat-value">12</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-title">Đánh giá trung bình</div>
-                <div class="stat-value">4.5 ⭐</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-title">Tỷ lệ phản hồi</div>
-                <div class="stat-value">95%</div>
-            </div>
-        </div>
-
-        <div class="reviews-container">
-            <div class="review-filters">
-                <button class="filter-btn active">Tất cả</button>
-                <button class="filter-btn">5 sao</button>
-                <button class="filter-btn">4 sao</button>
-                <button class="filter-btn">3 sao</button>
-                <button class="filter-btn">2 sao</button>
-                <button class="filter-btn">1 sao</button>
-                <button class="filter-btn">Chưa phản hồi</button>
+        <div class="main-container">
+            <div class="header">
+                <h1>Quản lý Đánh giá</h1>
             </div>
 
-            <div class="reviews-list" id="reviewsList">
-                <!-- Reviews will be populated by JavaScript -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-title">Tổng đánh giá</div>
+                    <div class="stat-value">524</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Đánh giá mới</div>
+                    <div class="stat-value">12</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Đánh giá trung bình</div>
+                    <div class="stat-value">4.5 ⭐</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Tỷ lệ phản hồi</div>
+                    <div class="stat-value">95%</div>
+                </div>
             </div>
 
-            <div class="pagination">
-                <button class="page-btn">1</button>
-                <button class="page-btn active">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn">...</button>
-                <button class="page-btn">10</button>
+            <div class="reviews-container">
+                <div class="review-filters">
+                    <button class="filter-btn active">Tất cả</button>
+                    <button class="filter-btn">5 sao</button>
+                    <button class="filter-btn">4 sao</button>
+                    <button class="filter-btn">3 sao</button>
+                    <button class="filter-btn">2 sao</button>
+                    <button class="filter-btn">1 sao</button>
+                    <button class="filter-btn">Chưa phản hồi</button>
+                </div>
+
+                <div class="reviews-list" id="reviewsList">
+                    <!-- Reviews will be populated by JavaScript -->
+                </div>
+
+                <div class="pagination">
+                    <button class="page-btn">1</button>
+                    <button class="page-btn active">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">...</button>
+                    <button class="page-btn">10</button>
+                </div>
             </div>
         </div>
     </div>

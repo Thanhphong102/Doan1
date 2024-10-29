@@ -71,24 +71,28 @@ a {
     font-size: 20px;
 }
 
+.container {
+    display: flex;
+}
+
 /* Main Content Styles */
-.main-content {
+.main-container {
+    display: inline-block;
     flex: 1;
     padding: 30px;
     background-color: #f8f9fa;
 }
 
-.page-header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
 }
 
-.page-title {
-    font-size: 24px;
+h1 {
     color: var(--primary-color);
-    font-weight: bold;
+    font-size: 24px;
 }
 
 .add-new-btn {
@@ -104,46 +108,6 @@ a {
 .add-new-btn:hover {
     background-color: var(--primary-light);
 }
-
-.container{
-    display: flex;
-}
-
-/* Main Content Styles */
-.main-content {
-    display: inline-block;
-    /* flex: 2; */
-    padding: 30px;
-    background-color: #f8f9fa;
-}
-
-.page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.page-title {
-    font-size: 24px;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-.add-new-btn {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.add-new-btn:hover {
-    background-color: var(--primary-light);
-}
-
 
 /* Table Styles */
 .data-table {
@@ -215,7 +179,7 @@ a {
     padding: 10px;
     border: 1px solid var(--border-color);
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .search-btn {
@@ -225,4 +189,15 @@ a {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: var(--primary-light);
+}
+
+input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 500px;
 }

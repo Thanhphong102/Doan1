@@ -3,33 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CeCi - Quản lý đơn hàng</title>
-    <link rel="stylesheet" href="Donhang.css">
-    <title>CECI |Quản lý đơn hàng</title>
-    <link rel ="stylesheet" href="Donhang.css">
+    <title>CECI |Quản lý Đơn hàng</title>
+    <link rel ="stylesheet" href="/Quanly/Donhang/Donhang.css">
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar -->
         <div class="sidebar">
             <div class="brand">CECI</div>
             <ul class="nav-menu">
-                <li class="nav-item">Dashboard</li>
-                <li class="nav-item">Sản phẩm</li>
-                <li class="nav-item active">Đơn hàng</li>
-                <li class="nav-item">Khách hàng</li>
-                <li class="nav-item">Danh mục</li>
-                <li class="nav-item">Khuyến mãi</li>
-                <li class="nav-item">Đánh giá</li>
-                <li class="nav-item">Báo cáo</li>
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Danhmuc/Danhmuc.html">Danh mục</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Sanpham/Sanpham.html">Sản phẩm</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Chitietsanpham/Chitiet.html">Chi tiết sản phẩm</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Donhang/Donhang.html">Đơn hàng</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Khachhang/khachhang.html">Khách hàng</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Khuyenmai/Khuyenmai.html">Khuyến mãi</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Danhgia/Danhgia.html">Đánh giá</a>
+                    </div>
+                </li> 
             </ul>
         </div>
 
         <!-- Main Content -->
-        <div class="main-content">
+        <div class="main-container">
             <!-- Header -->
-            <div class="page-header">
-                <h1 class="page-title">Quản lý đơn hàng</h1>
+            <div class="header">
+                <h1>Quản lý Đơn hàng</h1>
             </div>
 
             <!-- Order Stats -->
@@ -71,9 +95,8 @@
                 <button class="search-btn">Tìm kiếm</button>
             </div>
 
-            <!-- Orders Table -->
-            <div class="orders-table">
-                <table class="table">
+           
+                <table class="data-table">
                     <thead>
                         <tr>
                             <th>Mã đơn</th>
@@ -124,7 +147,6 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
         </div>
     </div>
 

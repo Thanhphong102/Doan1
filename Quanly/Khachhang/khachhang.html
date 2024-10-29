@@ -3,42 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD:Quanly/Khachhang/khachhang.html
-    <title>CeCi - Quản lý Khách hàng</title>
-    <link rel="stylesheet" href="khachhang.css">
-=======
     <title>CECI |Quản lý Khách hàng</title>
     <link rel ="stylesheet" href="khachhang.css">
->>>>>>> 8f380d98ca03965c1054f40d379fb2c9218f603d:Quản lý/Khách hàng/khachhang.html
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Quản lý Khách hàng</h1>
-            <button class="btn btn-primary">+ Thêm khách hàng mới</button>
+        <div class="sidebar">
+            <div class="brand">CECI</div>
+            <ul class="nav-menu">
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Danhmuc/Danhmuc.html">Danh mục</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Sanpham/Sanpham.html">Sản phẩm</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Chitietsanpham/Chitiet.html">Chi tiết sản phẩm</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Donhang/Donhang.html">Đơn hàng</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Khachhang/khachhang.html">Khách hàng</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Khuyenmai/Khuyenmai.html">Khuyến mãi</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Danhgia/Danhgia.html">Đánh giá</a>
+                    </div>
+                </li> 
+            </ul>
         </div>
 
-        <div class="search-container">
-            <input type="text" placeholder="Tìm kiếm khách hàng..." id="searchInput">
-            <button class="btn btn-primary">Tìm kiếm</button>
-        </div>
+        <div class="main-container">
+            <div class="header">
+                <h1>Quản lý Khách hàng</h1>
+                <button class="add-new-btn">+ Thêm khách hàng mới</button>
+            </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Mã KH</th>
-                    <th>Họ và tên</th>
-                    <th>Số điện thoại</th>
-                    <th>Email</th>
-                    <th>Tổng chi tiêu</th>
-                    <th>Trạng thái</th>
-                    <th>Thao tác</th>
-                </tr>
-            </thead>
-            <tbody id="customerTableBody">
-                <!-- Data will be populated by JavaScript -->
-            </tbody>
-        </table>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Tìm kiếm khách hàng..." id="searchInput">
+                <button class="search-btn">Tìm kiếm</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã KH</th>
+                        <th>Họ và tên</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th>
+                        <th>Tổng chi tiêu</th>
+                        <th>Trạng thái</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="customerTableBody">
+                    <!-- Data will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script>

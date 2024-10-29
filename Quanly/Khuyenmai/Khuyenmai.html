@@ -3,41 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CeCi - Quản lý Khuyến mãi</title>
+    <title>CECI |Quản lý Khuyến mãi</title>
     <link rel="stylesheet" href="Khuyenmai.css">
 
 </head>
 <body>
     <div class="container">
         <div class="sidebar">
-            <div class="brand">CeCi</div>
+            <div class="brand">CECI</div>
             <ul class="nav-menu">
-                <li class="nav-item">Danh mục</li>
-                <li class="nav-item">Sản phẩm</li>
-                <li class="nav-item">Chi tiết sản phẩm</li>
-                <li class="nav-item">Đơn hàng</li>
-                <li class="nav-item">Khách hàng</li>
-                <li class="nav-item">Khuyến mãi</li>
-                <li class="nav-item">Đánh giá</li>
-                <li class="nav-item">Chi tiết doanh thu</li>
-                <li class="nav-item active">Dashboard</li>
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Danhmuc/Danhmuc.html">Danh mục</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Sanpham/Sanpham.html">Sản phẩm</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Chitietsanpham/Chitiet.html">Chi tiết sản phẩm</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Donhang/Donhang.html">Đơn hàng</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Khachhang/khachhang.html">Khách hàng</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Khuyenmai/Khuyenmai.html">Khuyến mãi</a>
+                    </div>
+                </li> 
+                <li>
+                    <div class="nav-item">
+                        <a href="/Quanly/Danhgia/Danhgia.html">Đánh giá</a>
+                    </div>
+                </li> 
             </ul>
         </div>
 
-        <div class="header">
-            <h1>Quản lý Khuyến mãi</h1>
-            <button class="btn btn-primary">+ Thêm khuyến mãi mới</button>
-        </div>
+        <div class="main-container">
+            <div class="header">
+                <h1>Quản lý Khuyến mãi</h1>
+                <button class="add-new-btn">+ Thêm khuyến mãi mới</button>
+            </div>
 
-        <div class="tabs">
-            <div class="tab active">Tất cả</div>
-            <div class="tab">Đang diễn ra</div>
-            <div class="tab">Sắp diễn ra</div>
-            <div class="tab">Đã kết thúc</div>
-        </div>
+            <div class="tabs">
+                <div class="tab active">Tất cả</div>
+                <div class="tab">Đang diễn ra</div>
+                <div class="tab">Sắp diễn ra</div>
+                <div class="tab">Đã kết thúc</div>
+            </div>
 
-        <div class="promotion-cards" id="promotionCards">
-            <!-- Promotions will be populated by JavaScript -->
+            <div class="promotion-cards" id="promotionCards">
+                <!-- Promotions will be populated by JavaScript -->
+            </div>
         </div>
     </div>
 
