@@ -16,11 +16,9 @@ body{
 }
  .wrapper{
     position:relative;
-    width:400px;
+    width: 400px;
     height:440px;
     background:transparent;
-    border:2px solid #fff(255,255,255,.5);
-    border-radius: 20px;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px #fff(0,0,0, .5);
     display:flex;
@@ -29,10 +27,11 @@ body{
     overflow:hidden;
     /* transform:scale(0); */
     transition: height .2s ease;
+
  }
 
 .wrapper.active{
-    height:520px;
+    height:720px;
 }
 .wrapper .form-box{
     width: 100%;
@@ -43,6 +42,8 @@ body{
     background: #222048;
     transition: transform .18s ease;
     transform: translateX(0);
+    border: 2px solid #222048;
+    border-radius: 10px; 
     /* display:none; */
 }
 
@@ -56,6 +57,8 @@ body{
     position: absolute;
     transition: none;
     transform: translateX(400px);
+    border: 2px solid #222048;
+    border-radius: 10px; 
 }
 
 .wrapper.active .form-box.register{
@@ -160,4 +163,18 @@ body{
 }
 .Login-register p a:hover{
     text-decoration: underline;
+}
+.gender-selection {
+    color :#fff;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+.gender-selection label {
+    color:#fff;
+    margin-right: 10px;
+}
+.gender-selection input[type="radio"] {
+    margin-right: 5px;
+    color: #fff;
 }
