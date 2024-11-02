@@ -220,5 +220,13 @@ input[type="text"] {
 }
 
 .anh {
-    max-width: 100%;
+    width: 100%; /* Chiều rộng của phần ảnh chiếm toàn bộ khung */
+    height: 300px; /* Chiều cao cố định để giữ tỉ lệ */
+    overflow: hidden; /* Ẩn phần ảnh thừa ra ngoài */
+}
+
+.anh img {
+    width: 100%; /* Chiều rộng của hình ảnh chiếm toàn bộ phần cha */
+    height: auto; /* Chiều cao tự động để giữ tỉ lệ */
+    display: block; /* Loại bỏ khoảng trống dưới hình ảnh */
 }
